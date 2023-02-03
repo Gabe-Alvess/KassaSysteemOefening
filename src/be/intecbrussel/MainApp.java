@@ -48,7 +48,7 @@ public class MainApp {
         int number = 0;
         boolean afrekenen = false;
 
-        while (afrekenen == false) {
+        while (!afrekenen) {
             number++;
             if (number == 1) {
                 System.out.println("Voeg een product uit de bovenstaande lijst toe aan uw winkelwagen!");
@@ -61,7 +61,7 @@ public class MainApp {
             System.out.println(" ");
 
             switch (product) {
-                case "brood":
+                case "brood" -> {
                     stockBrood--;
                     totaleStock--;
                     if (stockBrood >= 0) {
@@ -74,8 +74,8 @@ public class MainApp {
                     } else {
                         System.out.println("Sorry, we hebben geen brood meer in onze stock!");
                     }
-                    break;
-                case "melk":
+                }
+                case "melk" -> {
                     stockMelk--;
                     totaleStock--;
                     if (stockMelk >= 0) {
@@ -88,8 +88,8 @@ public class MainApp {
                     } else {
                         System.out.println("Sorry, we hebben geen melk meer in onze stock!");
                     }
-                    break;
-                case "water":
+                }
+                case "water" -> {
                     stockWater--;
                     totaleStock--;
                     if (stockWater >= 0) {
@@ -102,8 +102,8 @@ public class MainApp {
                     } else {
                         System.out.println("Sorry, we hebben geen water meer in onze stock!");
                     }
-                    break;
-                case "choco":
+                }
+                case "choco" -> {
                     stockChoco--;
                     totaleStock--;
                     if (stockChoco >= 0) {
@@ -116,12 +116,9 @@ public class MainApp {
                     } else {
                         System.out.println("Sorry, we hebben geen choco meer in onze stock!");
                     }
-                    break;
-                case "afrekenen":
-                    afrekenen = true;
-                    break;
-                default:
-                    System.out.println("We hebben dit product niet. Sorry!!!");
+                }
+                case "afrekenen" -> afrekenen = true;
+                default -> System.out.println("We hebben dit product niet. Sorry!!!");
             }
 
         }
